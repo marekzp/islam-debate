@@ -1,0 +1,9 @@
+venv
+.env
+
+.ruff
+
+__pycache__
+*.pyc
+
+responses
