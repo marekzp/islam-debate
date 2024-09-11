@@ -11,6 +11,7 @@ class LLMClient(ABC):
     def get_response(self, prompt: str, model: str) -> str:
         pass
 
+
 class OpenAIClient(LLMClient):
     def __init__(self) -> None:
         self.api_key: Optional[str] = os.getenv("OPENAI_API_KEY")
@@ -24,6 +25,7 @@ class OpenAIClient(LLMClient):
             messages=[{"role": "user", "content": prompt}],
         )
         return response.choices[0].message.content
+
 
 class AnthropicClient(LLMClient):
     def __init__(self) -> None:
@@ -39,6 +41,7 @@ class AnthropicClient(LLMClient):
             max_tokens=1000,
         )
         return response.content[0].text
+
 
 def get_llm_client(llm_type: str) -> LLMClient:
     if llm_type == "openai":

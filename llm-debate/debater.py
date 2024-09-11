@@ -48,9 +48,7 @@ class Debater:
 
         response: str = self.llm_client.get_response(prompt, self.model)
         self.responses.append(response)
-        self.debate_history.append(
-            f"{self.position.capitalize()} response: {response}"
-        )
+        self.debate_history.append(f"{self.position.capitalize()} response: {response}")
         return response
 
     def conclude(self) -> str:

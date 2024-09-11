@@ -34,8 +34,8 @@ def save_html(data: Dict[str, Any], filename: str) -> str:
 def generate_html(data: Dict[str, Any]) -> str:
     """Generate HTML content for the debate results."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    template_path = os.path.join(current_dir, 'template.html')
-    
+    template_path = os.path.join(current_dir, "template.html")
+
     try:
         with open(template_path) as file:
             html_template = file.read()
@@ -44,25 +44,24 @@ def generate_html(data: Dict[str, Any]) -> str:
         return "HTML template file not found"
 
     debate_content = ""
-    for round_name, round_data in data['debate'].items():
+    for round_name, round_data in data["debate"].items():
         round_title = round_name.replace("_", " ").title()
         debate_content += f'<div class="round"><h2>{round_title}</h2>'
         for side, argument in round_data.items():
-            debate_content += f'''
+            debate_content += f"""
     <div class="argument {side}">
         <h3>{side.capitalize()}</h3>
         <p>{argument}</p>
-    </div>'''
-        debate_content += '</div>'
+    </div>"""
+        debate_content += "</div>"
 
-    html_content = html_template.replace('{topic}', data['metadata']['topic'])
-    html_content = html_content.replace('{llm_type}', data['metadata']['llm_type'])
-    html_content = html_content.replace('{model}', data['metadata']['model'])
-    html_content = html_content.replace('{date}', data['metadata']['date'])
+    html_content = html_template.replace("{topic}", data["metadata"]["topic"])
+    html_content = html_content.replace("{llm_type}", data["metadata"]["llm_type"])
+    html_content = html_content.replace("{model}", data["metadata"]["model"])
+    html_content = html_content.replace("{date}", data["metadata"]["date"])
     html_content = html_content.replace(
-        '{time_taken}', 
-        f"{data['metadata']['time_taken']:.2f}"
+        "{time_taken}", f"{data['metadata']['time_taken']:.2f}"
     )
-    html_content = html_content.replace('{debate_content}', debate_content)
+    html_content = html_content.replace("{debate_content}", debate_content)
 
     return html_content
