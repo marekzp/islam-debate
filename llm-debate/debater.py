@@ -20,7 +20,8 @@ class Debater:
         initial_prompt: str = (
             f"You are participating in a debate on the topic: '{self.topic}'. "
             f"You are {self.position} the proposition. Make a convincing opening "
-            "argument for your position."
+            "argument for your position. Please also provide relevant citations "
+            "supporting your position."
         )
         response: str = self.llm_client.get_response(initial_prompt, self.model)
         self.responses.append(response)
@@ -39,8 +40,10 @@ class Debater:
         )
         prompt += "\n\n".join(self.debate_history)
         prompt += (
-            f"\n\nNow, respond to the opponent's latest argument, maintaining your "
-            f"position {self.position} the proposition."
+            f"\n\nNow, carefully consider the opponent's latest arguments and, "
+            f"maintaining your position {self.position} the proposition, respond to "
+            "those arguments. Please provide relevant citations supporting your "
+            "argument."
         )
 
         response: str = self.llm_client.get_response(prompt, self.model)
