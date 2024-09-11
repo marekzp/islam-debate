@@ -20,6 +20,7 @@ LOG_LEVELS: Dict[str, int] = {
     "CRITICAL": logging.CRITICAL,
 }
 
+
 def main(model: str, topic: str, llm_type: str, num_rounds: int) -> Dict[str, Any]:
     start_time = time.time()
     llm_client = get_llm_client(llm_type)
@@ -74,6 +75,7 @@ def main(model: str, topic: str, llm_type: str, num_rounds: int) -> Dict[str, An
 
     return debate_results
 
+
 if __name__ == "__main__":
     parser: argparse.ArgumentParser = argparse.ArgumentParser(
         description="Run a debate between two LLMs."
@@ -82,10 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("model", help="Model name for the chosen LLM")
     parser.add_argument("topic", help="Topic of the debate")
     parser.add_argument(
-        "--rounds", 
-        type=int, 
-        default=3, 
-        help="Number of debate rounds (default: 3)"
+        "--rounds", type=int, default=3, help="Number of debate rounds (default: 3)"
     )
     parser.add_argument(
         "--log-level",
@@ -94,9 +93,12 @@ if __name__ == "__main__":
         help="Set the logging level",
     )
     parser.add_argument(
-        "--filename",
-        help="Custom output filename (without extension)",
-        default=None
+        "--filename", help="Custom output filename (without extension)", default=None
+    )
+    parser.add_argument(
+        "--return_html",
+        help="Return a html file that makes it easier to read responses",
+        default=False,
     )
     args: argparse.Namespace = parser.parse_args()
 
@@ -111,10 +113,11 @@ if __name__ == "__main__":
     results = main(args.model, args.topic, args.llm_type, args.rounds)
 
     if not args.filename:
-        filename = generate_filename(args.topic, )
+        filename = generate_filename(args.topic)
 
     json_path = save_json(results, filename)
-    html_path = save_html(results, filename)
-
     logger.info(f"Debate results saved to JSON: {json_path}")
-    logger.info(f"Debate results saved to HTML: {html_path}")
+
+    if args.return_html:
+        html_path = save_html(results, filename)
+        logger.info(f"Debate results saved to HTML: {html_path}")
