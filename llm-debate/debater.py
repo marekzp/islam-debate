@@ -1,4 +1,7 @@
+import logging
 from typing import List
+
+logger = logging.getLogger(__name__)
 
 
 class Debater:
@@ -15,8 +18,10 @@ class Debater:
         self.position: str = position
         self.responses: List[str] = []
         self.debate_history: List[str] = []
+        logger.info(f"{position} debater initialized")
 
     def start(self) -> str:
+        logger.info(f"Starting debate as {self.position} position")
         initial_prompt: str = (
             f"You are participating in a debate on the topic: '{self.topic}'. "
             f"You are {self.position} the proposition. Make a convincing opening "
@@ -28,9 +33,11 @@ class Debater:
         self.debate_history.append(
             f"{self.position.capitalize()} opening argument: {response}"
         )
+        logger.info(f"Opening argument generated for {self.position} position")
         return response
 
     def respond_to(self, opponent_argument: str) -> str:
+        logger.info(f"Generating response for {self.position} position")
         self.debate_history.append(f"Opponent's argument: {opponent_argument}")
 
         prompt: str = (
@@ -49,9 +56,12 @@ class Debater:
         response: str = self.llm_client.get_response(prompt, self.model)
         self.responses.append(response)
         self.debate_history.append(f"{self.position.capitalize()} response: {response}")
+        logger.info(f"Response generated for {self.position} position")
+
         return response
 
     def conclude(self) -> str:
+        logger.info(f"Generating conclusion for {self.position} position")
         prompt: str = (
             f"You have been participating in a debate on the topic: '{self.topic}'. "
             f"You are {self.position} the proposition. Here's the entire debate "
@@ -67,4 +77,6 @@ class Debater:
         self.debate_history.append(
             f"{self.position.capitalize()} conclusion: {response}"
         )
+        logger.info(f"Conclusion generated for {self.position} position")
+
         return response
