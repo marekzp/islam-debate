@@ -11,7 +11,7 @@ from utils import generate_filename, save_html, save_json
 
 logger = logging.getLogger(__name__)
 
-LLM_CHOICES: List[str] = ["openai", "anthropic"]
+LLM_CHOICES: List[str] = ["openai", "anthropic", "ollama"]
 LOG_LEVELS: Dict[str, int] = {
     "DEBUG": logging.DEBUG,
     "INFO": logging.INFO,
