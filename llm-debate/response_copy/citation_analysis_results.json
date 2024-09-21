@@ -1,0 +1,286 @@
+[
+  {
+    "filename": "islam_encourages_violence_towards_women_20240911_064304.json",
+    "model": "gpt-3.5-turbo",
+    "topic": "Islam encourages violence towards women",
+    "debate_analysis": {
+      "opening_arguments": {
+        "for": {
+          "entities": {
+            "organizations": [
+              "Georgetown Institute for Women",
+              "Islamic",
+              "Muslim",
+              "Islam",
+              "Muslims",
+              "Journal of International Women's Studies"
+            ]
+          },
+          "citations": [
+            "Women in Islamic Law: Examining Five Prevalent Myths",
+            "Patriarchy and Violence Against Women in the Name of Islam",
+            "Quran 4:34"
+          ],
+          "citations_llm": [
+            {
+              "source": "Quran 4:34",
+              "quote": "Verses that have been interpreted to suggest that men have authority over women and are allowed to discipline them if they disobey."
+            },
+            {
+              "source": "Women in Islamic Law: Examining Five Prevalent Myths",
+              "quote": "Islamic legal systems in many countries have been shown to discriminate against women, with laws that make it difficult for women to seek justice or protection from violence. In some cases, women who report violence or abuse are even punished themselves under laws that prioritize men's rights over women's well-being."
+            },
+            {
+              "source": "Patriarchy and Violence Against Women in the Name of Islam",
+              "quote": "Cultural practices that are justified or perpetuated by religious beliefs can also contribute to violence against women. For example, honor killings and female genital mutilation are practices that are still prevalent in some Muslim-majority countries, and are often justified using religious arguments."
+            },
+            {
+              "source": "Indirect references to Multiple Islamic texts",
+              "quote": "There are teachings within Islamic texts and interpretations that promote and justify violence against women, including teachings on modesty and obedience."
+            },
+            {
+              "source": "Indirect references to Cultural practices justified by religion",
+              "quote": "Islamic teachings and cultural practices, such as honor killings and female genital mutilation, that lead to violence against women."
+            }
+          ]
+        },
+        "against": {
+          "entities": {
+            "organizations": [
+              "Islam"
+            ],
+            "person": [
+              "Prophet Muhammad",
+              "Bukhari",
+              "The Prophet Muhammad"
+            ]
+          },
+          "citations": [
+            "The best of you are those who are best to their wives.",
+            "O you who have believed, it is not lawful for you to inherit women by compulsion.",
+            "Quran 4:19",
+            "Hadith - Sahih Bukhari"
+          ],
+          "citations_llm": [
+            {
+              "source": "Quran 4:19",
+              "quote": "O you who have believed, it is not lawful for you to inherit women by compulsion."
+            },
+            {
+              "source": "Hadith - Sahih Bukhari, Book 18, Hadith 19",
+              "quote": "The best of you are those who are best to their wives."
+            }
+          ]
+        }
+      },
+      "round_1": {
+        "for": {
+          "entities": {
+            "organizations": [
+              "Journal of Transcultural Nursing",
+              "L.W. Stewart",
+              "Islamic",
+              "Muslim",
+              "Islam",
+              "Quranic"
+            ],
+            "person": [
+              "Surah An-Nisa"
+            ]
+          },
+          "citations": [
+            "Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.",
+            "Honor-Based Violence Against Women: A Nurse's Role in Protection, Support, and Care",
+            "Quran 4:34"
+          ],
+          "citations_llm": [
+            {
+              "source": "Quran 4:19",
+              "quote": "Indirect reference to the principle of respect and equal treatment for women stated in the verse."
+            },
+            {
+              "source": "Quran 4:34",
+              "quote": "\"Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.\""
+            },
+            {
+              "source": "Honor-Based Violence Against Women: A Nurse's Role in Protection, Support, and Care, L.W. Stewart, Journal of Transcultural Nursing, 2016",
+              "quote": "Indirect reference to the existence of honor killings and female genital mutilation in some Muslim-majority countries, often justified using religious arguments."
+            }
+          ]
+        },
+        "against": {
+          "entities": {
+            "person": [
+              "Prophet Muhammad",
+              "Surah An-Nisa",
+              "Muhammad M. Pickthall",
+              "Fatima Mernissi"
+            ],
+            "organizations": [
+              "Islam",
+              "Muslim",
+              "Islamic"
+            ],
+            "work_of_art": [
+              "Beyond the Veil: Male-Female Dynamics"
+            ]
+          },
+          "citations": [
+            "Understanding the Quran: Themes and Styles",
+            "Beyond the Veil: Male-Female Dynamics in Muslim Society"
+          ],
+          "citations_llm": [
+            {
+              "source": "Quran 4:34",
+              "quote": "The interpretation of Surah An-Nisa (4:34) regarding men having authority over women, which stresses the responsibilities of both men and women in a marital context and emphasizes mutual respect and cooperation. It also mentions that in cases of persistent disobedience by the wife, a temporary separation may be considered as a last resort."
+            },
+            {
+              "source": "Understanding the Quran: Themes and Styles, Muhammad M. Pickthall",
+              "quote": "Interpretations of Quran 4:34, emphasizing mutual respect, communication, and patience in resolving conflicts within a marriage."
+            },
+            {
+              "source": "Beyond the Veil: Male-Female Dynamics in Muslim Society, Fatima Mernissi, 1975",
+              "quote": "The discussion on the difference between cultural practices in some Muslim-majority countries (like honor killings and female genital mutilation) and Islamic teachings, which stress respect, equality, and compassion. These harmful cultural practices have no basis in Islam and are contrary to its teachings."
+            }
+          ]
+        }
+      },
+      "conclusions": {
+        "for": {
+          "entities": {
+            "organizations": [
+              "Islamic",
+              "Muslim",
+              "Quranic",
+              "Islam"
+            ]
+          },
+          "citations": [],
+          "citations_llm": []
+        },
+        "against": {
+          "entities": {
+            "organizations": [
+              "Islamic",
+              "Islam"
+            ],
+            "person": [
+              "Prophet Muhammad"
+            ]
+          },
+          "citations": [],
+          "citations_llm": []
+        }
+      }
+    },
+    "combined_for": {
+      "entities": {
+        "organizations": [
+          "Journal of Transcultural Nursing",
+          "Georgetown Institute for Women",
+          "L.W. Stewart",
+          "Islamic",
+          "Muslim",
+          "Islam",
+          "Muslims",
+          "Journal of International Women's Studies",
+          "Quranic"
+        ],
+        "person": [
+          "Surah An-Nisa"
+        ]
+      },
+      "citations": [
+        "Patriarchy and Violence Against Women in the Name of Islam",
+        "Honor-Based Violence Against Women: A Nurse's Role in Protection, Support, and Care",
+        "Women in Islamic Law: Examining Five Prevalent Myths",
+        "Quran 4:34",
+        "Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand."
+      ],
+      "citations_llm": [
+        {
+          "source": "Quran 4:34",
+          "quote": "Verses that have been interpreted to suggest that men have authority over women and are allowed to discipline them if they disobey."
+        },
+        {
+          "source": "Women in Islamic Law: Examining Five Prevalent Myths",
+          "quote": "Islamic legal systems in many countries have been shown to discriminate against women, with laws that make it difficult for women to seek justice or protection from violence. In some cases, women who report violence or abuse are even punished themselves under laws that prioritize men's rights over women's well-being."
+        },
+        {
+          "source": "Patriarchy and Violence Against Women in the Name of Islam",
+          "quote": "Cultural practices that are justified or perpetuated by religious beliefs can also contribute to violence against women. For example, honor killings and female genital mutilation are practices that are still prevalent in some Muslim-majority countries, and are often justified using religious arguments."
+        },
+        {
+          "source": "Indirect references to Multiple Islamic texts",
+          "quote": "There are teachings within Islamic texts and interpretations that promote and justify violence against women, including teachings on modesty and obedience."
+        },
+        {
+          "source": "Indirect references to Cultural practices justified by religion",
+          "quote": "Islamic teachings and cultural practices, such as honor killings and female genital mutilation, that lead to violence against women."
+        },
+        {
+          "source": "Quran 4:19",
+          "quote": "Indirect reference to the principle of respect and equal treatment for women stated in the verse."
+        },
+        {
+          "source": "Quran 4:34",
+          "quote": "\"Men are in charge of women by [right of] what Allah has given one over the other and what they spend [for maintenance] from their wealth. So righteous women are devoutly obedient, guarding in [the husband's] absence what Allah would have them guard. But those [wives] from whom you fear arrogance - [first] advise them; [then if they persist], forsake them in bed; and [finally], strike them. But if they obey you [once more], seek no means against them. Indeed, Allah is ever Exalted and Grand.\""
+        },
+        {
+          "source": "Honor-Based Violence Against Women: A Nurse's Role in Protection, Support, and Care, L.W. Stewart, Journal of Transcultural Nursing, 2016",
+          "quote": "Indirect reference to the existence of honor killings and female genital mutilation in some Muslim-majority countries, often justified using religious arguments."
+        }
+      ]
+    },
+    "combined_against": {
+      "entities": {
+        "organizations": [
+          "Islamic",
+          "Muslim",
+          "Islam"
+        ],
+        "person": [
+          "The Prophet Muhammad",
+          "Prophet Muhammad",
+          "Bukhari",
+          "Surah An-Nisa",
+          "Muhammad M. Pickthall",
+          "Fatima Mernissi"
+        ],
+        "work_of_art": [
+          "Beyond the Veil: Male-Female Dynamics"
+        ]
+      },
+      "citations": [
+        "Hadith - Sahih Bukhari",
+        "Quran 4:19",
+        "The best of you are those who are best to their wives.",
+        "O you who have believed, it is not lawful for you to inherit women by compulsion.",
+        "Beyond the Veil: Male-Female Dynamics in Muslim Society",
+        "Understanding the Quran: Themes and Styles"
+      ],
+      "citations_llm": [
+        {
+          "source": "Quran 4:19",
+          "quote": "O you who have believed, it is not lawful for you to inherit women by compulsion."
+        },
+        {
+          "source": "Hadith - Sahih Bukhari, Book 18, Hadith 19",
+          "quote": "The best of you are those who are best to their wives."
+        },
+        {
+          "source": "Quran 4:34",
+          "quote": "The interpretation of Surah An-Nisa (4:34) regarding men having authority over women, which stresses the responsibilities of both men and women in a marital context and emphasizes mutual respect and cooperation. It also mentions that in cases of persistent disobedience by the wife, a temporary separation may be considered as a last resort."
+        },
+        {
+          "source": "Understanding the Quran: Themes and Styles, Muhammad M. Pickthall",
+          "quote": "Interpretations of Quran 4:34, emphasizing mutual respect, communication, and patience in resolving conflicts within a marriage."
+        },
+        {
+          "source": "Beyond the Veil: Male-Female Dynamics in Muslim Society, Fatima Mernissi, 1975",
+          "quote": "The discussion on the difference between cultural practices in some Muslim-majority countries (like honor killings and female genital mutilation) and Islamic teachings, which stress respect, equality, and compassion. These harmful cultural practices have no basis in Islam and are contrary to its teachings."
+        }
+      ]
+    }
+  }
+]
