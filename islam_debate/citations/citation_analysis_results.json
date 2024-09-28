@@ -2087,7 +2087,7 @@
   },
   {
     "filename": "islam_permits_music_20240911_073322.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam permits music",
     "debate_analysis": {
       "opening_arguments": {
@@ -3267,7 +3267,18 @@
             "Tragically, some individuals have twisted Islamic teachings to justify violence against women."
           ],
           "citations_llm": [
-            {"source": "Quran 4:34", "quote": "Men are in charge of women by [right of] what Allah has given one over the other and because they spend [to support them] from their wealth. As for those women whose rebellion you fear, admonish them first, then send them to separate beds, and finally beat them."},{"source":"Sharia law", "quote":"Relegates women to second-class citizenship in many areas such as inheritance, divorce, and testimony."},{"source":"Life of Prophet Muhammad", "quote":"Had several wives, many of whom were young. Sanctioned polygamy, allowing men to have up to four wives under specific conditions, while women are limited to one husband."}
+            {
+              "source": "Quran 4:34",
+              "quote": "Men are in charge of women by [right of] what Allah has given one over the other and because they spend [to support them] from their wealth. As for those women whose rebellion you fear, admonish them first, then send them to separate beds, and finally beat them."
+            },
+            {
+              "source":"Sharia law",
+              "quote":"Relegates women to second-class citizenship in many areas such as inheritance, divorce, and testimony."
+            },
+            {
+              "source":"Life of Prophet Muhammad",
+              "quote":"Had several wives, many of whom were young. Sanctioned polygamy, allowing men to have up to four wives under specific conditions, while women are limited to one husband."
+            }
           ]
         },
         "against": {
@@ -3676,7 +3687,30 @@
             "Quran 9:29"
           ],
           "citations_llm": [
-            {"source": "Quran 9:29", "quote": "Fight those who do not believe in Allah or in the Last Day and who do not consider unlawful what Allah and His Messenger have made unlawful and who do not adopt the religion of truth from those who were given the Scripture - [fight] until they give the jizyah willingly while they are humbled."}, {"source": "Pew Research Center. (2013). 'The World's Muslims: Religion, Politics and Society.', "quote": "While interpretations of Sharia may vary, many mainstream interpretations still include elements that are incompatible with modern concepts of human rights and peace. For example, apostasy remains punishable by death in several Muslim-majority countries."}, {"source": "Ye'or, B. (1996). The Decline of Eastern Christianity Under Islam: From Jihad to Dhimmitude. Fairleigh Dickinson University Press.", "quote": "The Islamic concept of jihad provided a unique religious justification for warfare that continues to influence modern conflicts. The early Islamic conquests were often accompanied by forced conversions and the imposition of discriminatory policies on non-Muslims."}, {"source": "Pew Research Center. (2013)."Muslim Publics Share Concerns about Extremist Groups.", "quote": "A 2013 Pew Research study found that significant percentages of Muslims in several countries believe that suicide bombings can be justified."}, {"source": "Burton, J. (1990). The Sources of Islamic Law: Islamic Theories of Abrogation. Edinburgh University Press.', "quote": "While the Quran does contain peaceful verses, the principle of abrogation in Islamic jurisprudence suggests that later, more militant verses take precedence over earlier, more peaceful ones."}, {"source": "Ye'or, B. (1985). The Dhimmi: Jews and Christians Under Islam. Fairleigh Dickinson University Press.', "quote": "The concept of dhimmitude, while historically offering some protections to non-Muslims, also institutionalized their second-class status in Islamic societies."}
+            {
+              "source": "Quran 9:29",
+              "quote": "Fight those who do not believe in Allah or in the Last Day and who do not consider unlawful what Allah and His Messenger have made unlawful and who do not adopt the religion of truth from those who were given the Scripture - [fight] until they give the jizyah willingly while they are humbled."
+            },
+            {
+              "source": "Pew Research Center. (2013). The World's Muslims: Religion, Politics and Society.",
+              "quote": "While interpretations of Sharia may vary, many mainstream interpretations still include elements that are incompatible with modern concepts of human rights and peace. For example, apostasy remains punishable by death in several Muslim-majority countries."
+            },
+            {
+              "source": "Ye'or, B. (1996). The Decline of Eastern Christianity Under Islam: From Jihad to Dhimmitude. Fairleigh Dickinson University Press.",
+              "quote": "The Islamic concept of jihad provided a unique religious justification for warfare that continues to influence modern conflicts. The early Islamic conquests were often accompanied by forced conversions and the imposition of discriminatory policies on non-Muslims."
+            },
+            {
+              "source": "Pew Research Center. (2013).Muslim Publics Share Concerns about Extremist Groups.",
+              "quote": "A 2013 Pew Research study found that significant percentages of Muslims in several countries believe that suicide bombings can be justified."
+            },
+            {
+              "source": "Burton, J. (1990). The Sources of Islamic Law: Islamic Theories of Abrogation. Edinburgh University Press.",
+              "quote": "While the Quran does contain peaceful verses, the principle of abrogation in Islamic jurisprudence suggests that later, more militant verses take precedence over earlier, more peaceful ones."
+            },
+            {
+              "source": "Ye'or, B. (1985). The Dhimmi: Jews and Christians Under Islam. Fairleigh Dickinson University Press.",
+              "quote": "The concept of dhimmitude, while historically offering some protections to non-Muslims, also institutionalized their second-class status in Islamic societies."
+            }
           ]
         }
       },
@@ -5660,7 +5694,33 @@
           },
           "citations": [],
           "citations_llm": [
-            {"source": "Quran ", "quote": "David's beautiful voice joined by mountains and birds in praise. "},{"source":  "Historical Practice ", "quote":  "Throughout Islamic history, music has played a significant role in cultural and spiritual practices. "},{"source":  "Imam al-Ghazali ", "quote":  "Writings on the ethics of listening to music "},{"source":  "Sheikh Yusuf al-Qaradawi ", "quote":  "Modern fatwa permitting music with appropriate content "},{"source":  "Interpretation of Hadiths ", "quote":  "Hadiths discouraging music, subjects to scholarly debate over their context and authenticity "},{"source":  "Cultural Diversity ", "quote":  "Flourishing of musical traditions across various Islamic societies throughout history "},{"source":  "Spiritual and Artistic Value ", "quote":  "Islam encourages the pursuit of beauty and art as means of spiritual elevation. Music can serve as a tool for spiritual growth and cultural expression "}
+            {
+              "source": "Quran ",
+              "quote": "David's beautiful voice joined by mountains and birds in praise."
+            },
+            {
+              "source":  "Historical Practice",
+              "quote":  "Throughout Islamic history, music has played a significant role in cultural and spiritual practices."
+            },{
+              "source":  "Imam al-Ghazali",
+              "quote":  "Writings on the ethics of listening to music"
+            },
+            {
+              "source":  "Sheikh Yusuf al-Qaradawi",
+              "quote":  "Modern fatwa permitting music with appropriate content"
+            },
+            {
+              "source":  "Interpretation of Hadiths ",
+              "quote":  "Hadiths discouraging music, subjects to scholarly debate over their context and authenticity "
+            },
+            {
+              "source":  "Cultural Diversity ",
+              "quote":  "Flourishing of musical traditions across various Islamic societies throughout history "
+            },
+            {
+              "source":  "Spiritual and Artistic Value ",
+              "quote":  "Islam encourages the pursuit of beauty and art as means of spiritual elevation. Music can serve as a tool for spiritual growth and cultural expression "
+            }
           ]
         },
         "against": {
@@ -6933,7 +6993,7 @@
   },
   {
     "filename": "islam_promotes_violence_towards_non_muslims_20240911_065617.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam promotes violence towards non Muslims",
     "debate_analysis": {
       "opening_arguments": {
@@ -7602,7 +7662,42 @@
             "Whoever buys a house or a plot of land, he should pay cash for it."
           ],
           "citations_llm": [
-            {"source": "Quran", "quote": "Condemnation of usury (riba al-nasia)"},  {"source": "Hadith (Malik, Muwatta, Book 16, Number 17)", "quote": "Every transaction that involves riba is void, no matter how small it may seem."},  {"source": "Hadith (al-Shafi'i, Al-Risalah, Book 1, Chapter 14)", "quote": "It is not permissible to take or give something with riba, whether it be little or much."},  {"source": "Scholarly interpretation - Imam Abu Hanifa', "quote": "Permitted interest in a mortgage setting (paraphrased)"},  {"source": "Hadith (Ibn Hajar, Fath al-Bari, Volume 8, Book 21, Number 11)", "quote": "It is not permissible to take or give something with riba, whether it be little or much."},  {"source": "Hadith (Tirmidhi, Volume 2, Book 12, Number 46)", "quote": "Whoever buys a house or a plot of land, he should pay cash for it."},  {"source": "Scholarly interpretations in general', "quote": "Some scholars have developed innovative financial instruments for Shariah-compliant mortgages (paraphrased)"} {"source": "Scholarly interpretations in general', "quote": "Some scholars may support the view of permitting Muslims to take mortgages with interest (paraphrased)"},  {"source": "Quran', "quote": "The Quran's prohibition on riba (paraphrased)"},
+            {
+              "source": "Quran",
+              "quote": "Condemnation of usury (riba al-nasia)"
+            },
+            {
+              "source": "Hadith (Malik, Muwatta, Book 16, Number 17)",
+              "quote": "Every transaction that involves riba is void, no matter how small it may seem."
+            },
+            {
+              "source": "Hadith (al-Shafi'i, Al-Risalah, Book 1, Chapter 14)",
+              "quote": "It is not permissible to take or give something with riba, whether it be little or much."
+            },
+            {
+              "source": "Scholarly interpretation - Imam Abu Hanifa",
+              "quote": "Permitted interest in a mortgage setting (paraphrased)"
+            },
+            {
+              "source": "Hadith (Ibn Hajar, Fath al-Bari, Volume 8, Book 21, Number 11)",
+              "quote": "It is not permissible to take or give something with riba, whether it be little or much."
+            },
+            {
+              "source": "Hadith (Tirmidhi, Volume 2, Book 12, Number 46)",
+              "quote": "Whoever buys a house or a plot of land, he should pay cash for it."
+            },
+            {
+              "source": "Scholarly interpretations in general",
+              "quote": "Some scholars have developed innovative financial instruments for Shariah-compliant mortgages (paraphrased)"
+            },
+            {
+              "source": "Scholarly interpretations in general",
+              "quote": "Some scholars may support the view of permitting Muslims to take mortgages with interest (paraphrased)"
+            },
+            {
+              "source": "Quran",
+              "quote": "The Quran's prohibition on riba (paraphrased)"
+            }
           ]
         }
       },
@@ -7775,7 +7870,40 @@
         },
         {
           "source": "Quran",
-          "quote": "Condemnation of usury (riba al-nasia)"},  {"source": "Hadith (Malik, Muwatta, Book 16, Number 17)", "quote": "Every transaction that involves riba is void, no matter how small it may seem."},  {"source": "Hadith (al-Shafi'i, Al-Risalah, Book 1, Chapter 14)", "quote": "It is not permissible to take or give something with riba, whether it be little or much."},  {"source": "Scholarly interpretation - Imam Abu Hanifa", "quote": "Permitted interest in a mortgage setting (paraphrased)"},  {"source": "Hadith (Ibn Hajar, Fath al-Bari, Volume 8, Book 21, Number 11)", "quote": "It is not permissible to take or give something with riba, whether it be little or much."},  {"source": "Hadith (Tirmidhi, Volume 2, Book 12, Number 46)", "quote": "Whoever buys a house or a plot of land, he should pay cash for it."},  {"source": "Scholarly interpretations in general", "quote": "Some scholars have developed innovative financial instruments for Shariah-compliant mortgages (paraphrased)"} {"source": "Scholarly interpretations in general", "quote": "Some scholars may support the view of permitting Muslims to take mortgages with interest (paraphrased)"},  {"source": "Quran", "quote": "The Quran's prohibition on riba (paraphrased)"},
+          "quote": "Condemnation of usury (riba al-nasia)"
+        },
+        {
+          "source": "Hadith (Malik, Muwatta, Book 16, Number 17)",
+          "quote": "Every transaction that involves riba is void, no matter how small it may seem."
+        },
+        {
+          "source": "Hadith (al-Shafi'i, Al-Risalah, Book 1, Chapter 14)",
+          "quote": "It is not permissible to take or give something with riba, whether it be little or much."
+        },
+        {
+          "source": "Scholarly interpretation - Imam Abu Hanifa",
+          "quote": "Permitted interest in a mortgage setting (paraphrased)"
+        },
+        {
+          "source": "Hadith (Ibn Hajar, Fath al-Bari, Volume 8, Book 21, Number 11)",
+          "quote": "It is not permissible to take or give something with riba, whether it be little or much."
+        },
+        {
+          "source": "Hadith (Tirmidhi, Volume 2, Book 12, Number 46)",
+          "quote": "Whoever buys a house or a plot of land, he should pay cash for it."
+        },
+        {
+          "source": "Scholarly interpretations in general",
+          "quote": "Some scholars have developed innovative financial instruments for Shariah-compliant mortgages (paraphrased)"
+        },
+        {
+          "source": "Scholarly interpretations in general",
+          "quote": "Some scholars may support the view of permitting Muslims to take mortgages with interest (paraphrased)"
+        },
+        {
+          "source": "Quran",
+          "quote": "The Quran's prohibition on riba (paraphrased)"
+        },
         {
           "source": "Quran 3:130",
           "quote": "Islam strictly prohibits Muslims from taking mortgages with interest. The Quranic prohibition on riba, as mentioned in Surah Al-Imran, Verse 130, is clear and unequivocal."
@@ -10226,7 +10354,7 @@
               "Arab"
             ],
             "person": [
-              "Ibn Kathir"s",
+              "Ibn Kathir's",
               "Richard N. Frye",
               "Bukhari",
               "Prophet",
@@ -10503,7 +10631,7 @@
         ],
         "person": [
           "The Prophet Muhammad",
-          "Ibn Kathir"s",
+          "Ibn Kathir's",
           "Richard N. Frye",
           "Bukhari",
           "Prophet",
@@ -10646,7 +10774,22 @@
             "Quran 4:59"
           ],
           "citations_llm": [
-            "Here are the citations found in this text:  1. { "source": "Quran 4:59", "quote": "obey Allah and obey the Messenger and those in authority among you" },{ "source": "Ibn Taymiyah, al-Siyasa al-Shariah", "quote": "Muslims must obey the laws of the land in which they live so long as no constraints are imposed that would cause them to deviate from their religion" },{ "source": "Muslim Views on Religion, Science and Popular Culture - Pew Research Center, 2017", "quote": "A 2017 survey by the Pew Research Center found that Muslims widely embrace key secular democratic values such as religious freedom, inter-faith respect, and democratic institutions" },{ "source": "The Muslim Question in Canada - UBC Press, 2014", "quote": "studies show that Muslim civic and political engagement in the West is robust and increasing" }  Note: The historical reference to Prophet Muhammad mediating disputes among different faith communities in Medina and granting rights and protections to non-Muslim minorities does not have an explicit citation. This information is commonly found in many Islamic resources and historical accounts."
+           {
+             "source": "Quran 4:59",
+             "quote": "obey Allah and obey the Messenger and those in authority among you"
+            },
+            {
+              "source": "Ibn Taymiyah, al-Siyasa al-Shariah",
+              "quote": "Muslims must obey the laws of the land in which they live so long as no constraints are imposed that would cause them to deviate from their religion"
+            },
+            {
+              "source": "Muslim Views on Religion, Science and Popular Culture - Pew Research Center, 2017",
+              "quote": "A 2017 survey by the Pew Research Center found that Muslims widely embrace key secular democratic values such as religious freedom, inter-faith respect, and democratic institutions"
+            },
+            {
+              "source": "The Muslim Question in Canada - UBC Press, 2014",
+              "quote": "studies show that Muslim civic and political engagement in the West is robust and increasing"
+            }
           ]
         },
         "against": {
@@ -10804,7 +10947,21 @@
         "Indeed, Allah commands justice, good deeds, and giving to relatives, and He forbids immorality, misconduct, and oppression. He admonishes you so that you may take heed"
       ],
       "citations_llm": [
-        { "source": "Quran 4:59", "quote": "obey Allah and obey the Messenger and those in authority among you" },{ "source": "Ibn Taymiyah, al-Siyasa al-Shariah", "quote": "Muslims must obey the laws of the land in which they live so long as no constraints are imposed that would cause them to deviate from their religion" },{ "source": "Muslim Views on Religion, Science and Popular Culture - Pew Research Center, 2017", "quote": "A 2017 survey by the Pew Research Center found that Muslims widely embrace key secular democratic values such as religious freedom, inter-faith respect, and democratic institutions" },{ "source": "The Muslim Question in Canada - UBC Press, 2014", "quote": ,studies show that Muslim civic and political engagement in the West is robust and increasing, }  Note: The historical reference to Prophet Muhammad mediating disputes among different faith communities in Medina and granting rights and protections to non-Muslim minorities does not have an explicit citation. This information is commonly found in many Islamic resources and historical accounts.",
+        {
+          "source": "Quran 4:59",
+          "quote": "obey Allah and obey the Messenger and those in authority among you"
+        },
+        {
+          "source": "Ibn Taymiyah, al-Siyasa al-Shariah",
+          "quote": "Muslims must obey the laws of the land in which they live so long as no constraints are imposed that would cause them to deviate from their religion"
+        },{
+          "source": "Muslim Views on Religion, Science and Popular Culture - Pew Research Center, 2017",
+          "quote": "A 2017 survey by the Pew Research Center found that Muslims widely embrace key secular democratic values such as religious freedom, inter-faith respect, and democratic institutions"
+        },
+        {
+          "source": "The Muslim Question in Canada - UBC Press, 2014",
+          "quote": "studies show that Muslim civic and political engagement in the West is robust and increasing"
+        },
         {
           "source": "Quran 16:90",
           "quote": "Indeed, Allah commands justice, good deeds, and giving to relatives, and He forbids immorality, misconduct, and oppression. He admonishes you so that you may take heed"
@@ -10841,7 +10998,7 @@
   },
   {
     "filename": "muslims_cannot_live_in_secular_countries_20240911_063815.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Muslims cannot live in secular countries",
     "debate_analysis": {
       "opening_arguments": {
@@ -11960,7 +12117,7 @@
               "quote": "Prophet Muhammad said, 'Seeking knowledge is obligatory upon every Muslim'...making no distinction between genders"
             },
             {
-              "source": "Rawlinson, K. (2015). World's oldest university is 1,157 and counting". CNN.",
+              "source": "Rawlinson, K. (2015). World's oldest university is 1,157 and counting. CNN.",
               "quote": "Historically, Muslim women like Fatima al-Fihri founded the world's first university in 859 CE"
             },
             {
@@ -11972,7 +12129,7 @@
               "quote": "Islamic history shows examples of women like Khadijah bint Khuwaylid, the Prophet's first wife, who was an independent businesswoman"
             },
             {
-              "source": "Alkhateeb, M. (2015). Islamic Marriage Contracts: A Resource Guide for Legal Professionals, Advocates, Imams & Communities". Peaceful Families Project.",
+              "source": "Alkhateeb, M. (2015). Islamic Marriage Contracts: A Resource Guide for Legal Professionals, Advocates, Imams & Communities. Peaceful Families Project.",
               "quote": "In Islamic law, men are obligated to financially support their families, while women's wealth is their own"
             },
             {
@@ -12177,7 +12334,7 @@
           "quote": "Prophet Muhammad said, 'Seeking knowledge is obligatory upon every Muslim'...making no distinction between genders"
         },
         {
-          "source": "Rawlinson, K. (2015). World's oldest university is 1,157 and counting". CNN.",
+          "source": "Rawlinson, K. (2015). World's oldest university is 1,157 and counting. CNN.",
           "quote": "Historically, Muslim women like Fatima al-Fihri founded the world's first university in 859 CE"
         },
         {
@@ -12189,7 +12346,7 @@
           "quote": "Islamic history shows examples of women like Khadijah bint Khuwaylid, the Prophet's first wife, who was an independent businesswoman"
         },
         {
-          "source": "Alkhateeb, M. (2015). Islamic Marriage Contracts: A Resource Guide for Legal Professionals, Advocates, Imams & Communities". Peaceful Families Project.",
+          "source": "Alkhateeb, M. (2015). Islamic Marriage Contracts: A Resource Guide for Legal Professionals, Advocates, Imams & Communities. Peaceful Families Project.",
           "quote": "In Islamic law, men are obligated to financially support their families, while women's wealth is their own"
         },
         {
@@ -13198,7 +13355,7 @@
   },
   {
     "filename": "islam_promotes_peace_20240911_070107.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam promotes peace",
     "debate_analysis": {
       "opening_arguments": {
@@ -13451,7 +13608,10 @@
           },
           "citations": [],
           "citations_llm": [
-            "Here is one citation identified in the provided text:   [   {     "source": "Quran 2",     "quote": "Varied interpretations of verses, used both defensively and provocatively"   } ]  There were no other direct or indirect citations, quotations, or references found in the text."
+            {
+              "source": "Quran 2",
+              "quote": "Varied interpretations of verses, used both defensively and provocatively"
+            }
           ]
         }
       }
@@ -13636,7 +13796,10 @@
           "source": "George Washington University. (2017). The Islamic State and U.S. Policy. Retrieved from https://www.crsreports.com.",
           "quote": "Their narratives are based on their extreme interpretations of Islamic texts, and they draw upon Islamic symbolism, rhetoric, history, motivation, and justification"
         },
-        "Here is one citation identified in the provided text:   [   {     "source": "Quran 2 (Surah Al-Baqarah)",     "quote": "Varied interpretations of verses, used both defensively and provocatively"   } ]  There were no other direct or indirect citations, quotations, or references found in the text."
+        {
+          "source": "Quran 2 (Surah Al-Baqarah)",
+          "quote": "Varied interpretations of verses, used both defensively and provocatively"
+        }
       ]
     }
   },
@@ -14450,7 +14613,7 @@
   },
   {
     "filename": "islam_permits_muslims_to_eat_any_beef_sold_in_christian_countries_20240911_072747.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam permits Muslims to eat any beef sold in Christian countries",
     "debate_analysis": {
       "opening_arguments": {
@@ -14908,7 +15071,10 @@
             "secularism."
           ],
           "citations_llm": [
-            { "source": "Universal Declaration of Human Rights, Article 18", "quote": "Secularism does not imply hostility towards religion or the exclusion of religious individuals from public life. Rather, as enshrined in international declarations like the Universal Declaration of Human Rights (Article 18), it guarantees the separation of religious institutions from state power while ensuring freedom of belief and practice for all. This means Muslims, just like citizens of any other faith, have the right to participate fully in the political, social, and economic life of their secular country" }  There are no indirect references or quotations in the text."
+            {
+              "source": "Universal Declaration of Human Rights, Article 18",
+              "quote": "Secularism does not imply hostility towards religion or the exclusion of religious individuals from public life. Rather, as enshrined in international declarations like the Universal Declaration of Human Rights (Article 18), it guarantees the separation of religious institutions from state power while ensuring freedom of belief and practice for all. This means Muslims, just like citizens of any other faith, have the right to participate fully in the political, social, and economic life of their secular country"
+            }
           ]
         },
         "against": {
@@ -15072,7 +15238,10 @@
         "Quran 5:44"
       ],
       "citations_llm": [
-        { "source": "Universal Declaration of Human Rights, Article 18", "quote": "Secularism does not imply hostility towards religion or the exclusion of religious individuals from public life. Rather, as enshrined in international declarations like the Universal Declaration of Human Rights (Article 18), it guarantees the separation of religious institutions from state power while ensuring freedom of belief and practice for all. This means Muslims, just like citizens of any other faith, have the right to participate fully in the political, social, and economic life of their secular country" }  There are no indirect references or quotations in the text.",
+        {
+          "source": "Universal Declaration of Human Rights, Article 18",
+          "quote": "Secularism does not imply hostility towards religion or the exclusion of religious individuals from public life. Rather, as enshrined in international declarations like the Universal Declaration of Human Rights (Article 18), it guarantees the separation of religious institutions from state power while ensuring freedom of belief and practice for all. This means Muslims, just like citizens of any other faith, have the right to participate fully in the political, social, and economic life of their secular country"
+        },
         {
           "source": "Quran 5:44",
           "quote": "Interpretation/indirect reference about a verse addressing the issue of judging legal disputes based on God's revealed law within a society where Islam was already established."
@@ -15447,7 +15616,7 @@
   },
   {
     "filename": "islam_promotes_women's_rights_20240911_065052.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam promotes women's rights",
     "debate_analysis": {
       "opening_arguments": {
@@ -17543,7 +17712,22 @@
             "Quran 2:173"
           ],
           "citations_llm": [
-            {"source": "Quran 5:3", "quote": "The Quran specifically advocates for Zabiha, which refers to the Islamic method of animal slaughter. The specific verse is not quoted but the principles described in Quran 5:3 are indirectly referenced."},{"source": "Quran 4:8", "quote": "Say: 'O Allah! Lord of knowledge! Grant me knowledge which is beneficial."},{"source": "Quran 2:173", "quote": "While the specific verse is not quoted, it's principles are referenced indirectly, suggesting the importance of expressing gratitude to Allah (SWT) for sustenance and promoting responsible consumption."},{"source": "Ijtihad", "quote": "Islamic jurisprudence principles allow for Ijtihad, which denotes the process of scholarly reasoning and interpretation within the framework of Quranic principles. The specific source for Ijtihad is not mentioned but it is a well-known concept in Islamic jurisprudence."}
+            {
+              "source": "Quran 5:3",
+              "quote": "The Quran specifically advocates for Zabiha, which refers to the Islamic method of animal slaughter. The specific verse is not quoted but the principles described in Quran 5:3 are indirectly referenced."
+            },
+            {
+              "source": "Quran 4:8",
+              "quote": "Say: 'O Allah! Lord of knowledge! Grant me knowledge which is beneficial."
+            },
+            {
+              "source": "Quran 2:173",
+              "quote": "While the specific verse is not quoted, it's principles are referenced indirectly, suggesting the importance of expressing gratitude to Allah (SWT) for sustenance and promoting responsible consumption."
+            },
+            {
+              "source": "Ijtihad",
+              "quote": "Islamic jurisprudence principles allow for Ijtihad, which denotes the process of scholarly reasoning and interpretation within the framework of Quranic principles. The specific source for Ijtihad is not mentioned but it is a well-known concept in Islamic jurisprudence."
+            }
           ]
         },
         "against": {
@@ -18265,7 +18449,7 @@
   },
   {
     "filename": "islam_encourages_violence_towards_women_20240911_064555.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam encourages violence towards women",
     "debate_analysis": {
       "opening_arguments": {
@@ -18876,7 +19060,14 @@
         "Women and the Remaking of Islamic Authority."
       ],
       "citations_llm": [
-        { "source": "Deeb, L. (2011). Women and the Remaking of Islamic Authority. Princeton University Press.", "quote": "The indirect reference to this source suggests a discussion about the challenges women face in asserting their rights in Islamic societies. The specific content referred to was not directly quoted in the text." },{ "source": "Moghissi, H. (1999). Feminism and Islamic Fundamentalism: The Limits of Postmodern Analysis. New Left Review.', "quote": "The indirect reference to this source suggests a discussion on the limitations of feminist analysis in the context of Islamic societies. The specific content referred to was not directly quoted in the text.' },
+        {
+          "source": "Deeb, L. (2011). Women and the Remaking of Islamic Authority. Princeton University Press.",
+          "quote": "The indirect reference to this source suggests a discussion about the challenges women face in asserting their rights in Islamic societies. The specific content referred to was not directly quoted in the text."
+        },
+        {
+          "source": "Moghissi, H. (1999). Feminism and Islamic Fundamentalism: The Limits of Postmodern Analysis. New Left Review.",
+          "quote": "The indirect reference to this source suggests a discussion on the limitations of feminist analysis in the context of Islamic societies. The specific content referred to was not directly quoted in the text."
+        },
         {
           "source": "Ahmed, Leila. \u201cWomen and Gender in Islam: Historical Roots of a Modern Debate.\u201d Yale University Press, 1992.",
           "quote": "patriarchal interpretations of Islamic teachings continue to perpetuate discriminatory practices against women in many societies... This perpetuates systemic gender inequality and undermines women's ability to fully exercise their rights as equal members of society."
@@ -20782,7 +20973,30 @@
         "the most hated person in the eyes of God is one who is given something (i.e., wealth) but does not use it for its intended purpose"
       ],
       "citations_llm": [
-        { "source": "Quran 26:89-90", "quote": "The Quran contains verses that are both poetic and musical in nature" }, {  "source": "Prophet Muhammad (indirect reference)", "quote": "Muhammad was known to have appreciated music and poetry, often inviting poets and musicians to perform for him during his lifetime"  },  {  "source": "Bukhari", "quote": "The angels descend to the assembly of the faithful when they hear the sound of a musical instrument" }, {  "source": "Quran 40:13", "quote": "And on the Day of Judgment, the Lord of all will gather the messengers and say, How did you act?" }, { "source": "Bukhari", "quote": "the most hated person in the eyes of God is one who is given something (i.e., wealth) but does not use it for its intended purpose" }, { "source": "Quran 26:88", "quote": "And We have certainly given you (the ability) in the Quran, to be a warning to those who are yet to come" },
+        {
+          "source": "Quran 26:89-90",
+          "quote": "The Quran contains verses that are both poetic and musical in nature"
+        },
+        {
+          "source": "Prophet Muhammad (indirect reference)",
+          "quote": "Muhammad was known to have appreciated music and poetry, often inviting poets and musicians to perform for him during his lifetime"
+        },
+        {
+          "source": "Bukhari",
+          "quote": "The angels descend to the assembly of the faithful when they hear the sound of a musical instrument"
+        },
+        {
+          "source": "Quran 40:13",
+          "quote": "And on the Day of Judgment, the Lord of all will gather the messengers and say, How did you act?"
+        },
+        {
+          "source": "Bukhari",
+          "quote": "the most hated person in the eyes of God is one who is given something (i.e., wealth) but does not use it for its intended purpose"
+        },
+        {
+          "source": "Quran 26:88",
+          "quote": "And We have certainly given you (the ability) in the Quran, to be a warning to those who are yet to come"
+        },
         {
           "source": "Quran 31:26",
           "quote": "And He has subjected to you, as from Himself, all things."
@@ -23987,7 +24201,26 @@
             "Islam permits Muslims to eat any beef sold in Christian countries."
           ],
           "citations_llm": [
-            { "source": "Quran", "quote": "Permission for Muslims to consume food, including meat, prepared by People of the Book." },{ "source": "Prophetic tradition", "quote": "The Prophet Muhammad (peace be upon him) consuming meat offered by non-Muslims, demonstrating flexibility in dietary practices" }, { "source": "European Council for Fatwa and Research and the Fiqh Council of North America", "quote": "Fatwas permitting Muslims to consume meat sold in Christian countries" }, { "source": "Quran and Islamic Principles", "quote": "Emphasis on making religious practice manageable for believers, especially in non-Muslim majority countries" }, { "source": "Islamic jurisprudence principle", "quote": "The assumption of permissibility in cases of uncertainty" }
+            {
+              "source": "Quran",
+              "quote": "Permission for Muslims to consume food, including meat, prepared by People of the Book."
+            },
+            {
+              "source": "Prophetic tradition",
+              "quote": "The Prophet Muhammad (peace be upon him) consuming meat offered by non-Muslims, demonstrating flexibility in dietary practices"
+            },
+            {
+              "source": "European Council for Fatwa and Research and the Fiqh Council of North America",
+              "quote": "Fatwas permitting Muslims to consume meat sold in Christian countries"
+            },
+            {
+              "source": "Quran and Islamic Principles",
+              "quote": "Emphasis on making religious practice manageable for believers, especially in non-Muslim majority countries"
+            },
+            {
+              "source": "Islamic jurisprudence principle",
+              "quote": "The assumption of permissibility in cases of uncertainty"
+            }
           ]
         },
         "against": {
@@ -24108,7 +24341,26 @@
           "source": "Lever, J., & Miele, M. (2012). The growth of halal meat markets in Europe: An exploration of the supply side theory of religion. Journal of Rural Studies, 28(4), 528-537.",
           "quote": "The authors note that many Christian slaughterhouses in Western countries now employ Muslim workers and use methods that align with Islamic principles"
         },
-        { "source": "Quran", "quote": "Permission for Muslims to consume food, including meat, prepared by People of the Book." },{ "source": "Prophetic tradition", "quote": "The Prophet Muhammad (peace be upon him) consuming meat offered by non-Muslims, demonstrating flexibility in dietary practices" }, { "source": "European Council for Fatwa and Research and the Fiqh Council of North America", "quote": "Fatwas permitting Muslims to consume meat sold in Christian countries" }, { "source": "Quran and Islamic Principles", "quote": "Emphasis on making religious practice manageable for believers, especially in non-Muslim majority countries" }, { "source": "Islamic jurisprudence principle", "quote": "The assumption of permissibility in cases of uncertainty" }
+        {
+          "source": "Quran",
+          "quote": "Permission for Muslims to consume food, including meat, prepared by People of the Book."
+        },
+        {
+          "source": "Prophetic tradition",
+          "quote": "The Prophet Muhammad (peace be upon him) consuming meat offered by non-Muslims, demonstrating flexibility in dietary practices"
+        },
+        {
+          "source": "European Council for Fatwa and Research and the Fiqh Council of North America",
+          "quote": "Fatwas permitting Muslims to consume meat sold in Christian countries"
+        },
+        {
+          "source": "Quran and Islamic Principles",
+          "quote": "Emphasis on making religious practice manageable for believers, especially in non-Muslim majority countries"
+        },
+        {
+          "source": "Islamic jurisprudence principle",
+          "quote": "The assumption of permissibility in cases of uncertainty"
+        }
       ]
     },
     "combined_against": {
@@ -24992,8 +25244,8 @@
         },
         {
           "source": "Hadith reported by Prophet Muhammad",
-          "quote": "None of you truly believes until he loves for his brother what he loves for himself.",
-        }
+          "quote": "None of you truly believes until he loves for his brother what he loves for himself."
+        },
         {
           "source": "Quran 9:29",
           "quote": "This verse has been indirectly referred to as an example used to claim that Islamic teachings justify violence."
@@ -25074,7 +25326,7 @@
   },
   {
     "filename": "islam_permits_muslims_to_take_mortgages_with_interest_20240911_072215.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam permits Muslims to take mortgages with interest",
     "debate_analysis": {
       "opening_arguments": {
@@ -26235,7 +26487,26 @@
             "The Impact of Polygamy on Gender Relations in Muslim Societies."
           ],
           "citations_llm": [
-            {"source": "Quran4:34", "quote": "The speaker refers to this Quran verse indirectly in their argument about Islam's interpretation of women's rights."},  {"source": "Ibn Abbas and Ibn Kathir", "quote": "The speaker indirectly quotes early Islamic scholars interpretations - 'protection' as providing for one's family's well-being."},  {"source": "Amin, M. (2018). Reclaiming the Quran: A Feminist Reading of Islamic Scripture.", "quote": "The speaker's invocation of contemporary Muslim scholars and activists call to reinterpret Quranic verses and Hadiths in light of societal values and human rights principles."},  {"source": "Hassan, Y. (2014). The Impact of Polygamy on Gender Relations in Muslim Societies.", "quote": "The speaker cites this work twice - firstly, agreeing with the argument that Quranic verses and Hadiths should be reinterpreted and secondly, linking the practice of polygamy to increased rates of domestic violence and exploitation."},  {"source": "Ahmed, L. (2012). Polygamy and the Marginalization of Women: A Study of Pakistani Muslim Immigrants in Britain.", "quote": "The speaker references this study twice - in arguing that polygamous relationships can reinforce patriarchal dominance, and that Islamic texts justify discriminatory laws in Muslim-majority countries."},
+            {
+              "source": "Quran4:34",
+              "quote": "The speaker refers to this Quran verse indirectly in their argument about Islam's interpretation of women's rights."
+            },
+            {
+              "source": "Ibn Abbas and Ibn Kathir",
+              "quote": "The speaker indirectly quotes early Islamic scholars interpretations - 'protection' as providing for one's family's well-being."
+            },
+            {
+              "source": "Amin, M. (2018). Reclaiming the Quran: A Feminist Reading of Islamic Scripture.",
+              "quote": "The speaker's invocation of contemporary Muslim scholars and activists call to reinterpret Quranic verses and Hadiths in light of societal values and human rights principles."
+            },
+            {
+              "source": "Hassan, Y. (2014). The Impact of Polygamy on Gender Relations in Muslim Societies.",
+              "quote": "The speaker cites this work twice - firstly, agreeing with the argument that Quranic verses and Hadiths should be reinterpreted and secondly, linking the practice of polygamy to increased rates of domestic violence and exploitation."
+            },
+            {
+              "source": "Ahmed, L. (2012). Polygamy and the Marginalization of Women: A Study of Pakistani Muslim Immigrants in Britain.",
+              "quote": "The speaker references this study twice - in arguing that polygamous relationships can reinforce patriarchal dominance, and that Islamic texts justify discriminatory laws in Muslim-majority countries."
+            }
           ]
         }
       },
@@ -27111,7 +27382,34 @@
           "source": "Living Out Islam: Voices of Gay, Lesbian, and Transgender Muslims, by Scott Siraj al-Haqq Kugle",
           "quote": "M.A.S. Abdel Haleem and Scott Siraj al-Haqq Kugle argue for a more inclusive and compassionate approach towards LGBTQ+ individuals within the Islamic faith."
         },
-        { "source": "Scott Kugle", "quote": "Alternative understandings of the Quran's verses on homosexuality" }, { "source": "Junaid Jahangir", "quote": "Alternative understandings of the Quran's verses on homosexuality" }, { "source": "Hadith", "quote": "Must be considered within their historical context" }, { "source": "Amina Wadud", "quote": "Questioning the authenticity of certain Hadith narrations" }, { "source": "Khaled El-Rouayheb", "quote": "Questioning the authenticity of certain Hadith narrations" }, { "source": "Islam", "quote": "Promotion of love, compassion, and acceptance within Islam should extend to all individuals, including LGBTQ+ individuals" }, { "source": "Quran and Islamic tradition", "quote": "Need for critical engagement for a more inclusive and understanding interpretation of Islam" }
+        {
+          "source": "Scott Kugle",
+          "quote": "Alternative understandings of the Quran's verses on homosexuality"
+        },
+        {
+          "source": "Junaid Jahangir",
+          "quote": "Alternative understandings of the Quran's verses on homosexuality"
+        },
+        {
+          "source": "Hadith",
+          "quote": "Must be considered within their historical context"
+        },
+        {
+          "source": "Amina Wadud",
+          "quote": "Questioning the authenticity of certain Hadith narrations"
+        },
+        {
+          "source": "Khaled El-Rouayheb",
+          "quote": "Questioning the authenticity of certain Hadith narrations"
+        },
+        {
+          "source": "Islam",
+          "quote": "Promotion of love, compassion, and acceptance within Islam should extend to all individuals, including LGBTQ+ individuals"
+        },
+        {
+          "source": "Quran and Islamic tradition",
+          "quote": "Need for critical engagement for a more inclusive and understanding interpretation of Islam"
+        }
       ]
     },
     "combined_against": {
@@ -28464,7 +28762,7 @@
               "quote": "Verses stating men are the 'maintainers' of women and permitting physical disciplining enable male authority over women and open the door to domestic violence, despite diverse interpretations"
             },
             {
-              "source": "Quran 4:32, 4:34",
+              "source": "Quran 4:32-34",
               "quote": "while Islam granted women some rights like inheritance, its laws continue to restrict women's autonomy by mandating husband's consent for wives to work and travel in many interpretations"
             }
           ]
@@ -28671,7 +28969,7 @@
           "quote": "Verses stating men are the 'maintainers' of women and permitting physical disciplining enable male authority over women and open the door to domestic violence, despite diverse interpretations"
         },
         {
-          "source": "Quran 4:32, 4:34",
+          "source": "Quran 4:32-34",
           "quote": "while Islam granted women some rights like inheritance, its laws continue to restrict women's autonomy by mandating husband's consent for wives to work and travel in many interpretations"
         }
       ]
@@ -29562,7 +29860,7 @@
   },
   {
     "filename": "islam_permits_homosexuality_20240911_073837.json",
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "topic": "Islam permits homosexuality",
     "debate_analysis": {
       "opening_arguments": {
@@ -30815,8 +31113,7 @@
         {
           "source": "Ihya Ulum al-Din, Book 15, Chapter 5",
           "quote": "Al-Ghazali's perspective that listening to poetry and music that does not excite lust or lead to immorality is not forbidden."
-        },
-        "The text appears to have indirect references to the Quran, Hadith, and Islamic scholarly tradition, however, it does not contain any direct quotes or citation details. The specific chapters, verses, scholars' works, or Hadiths are not directly quoted or provided. Thus, I cannot provide accurate sources or quotes."
+        }
       ]
     },
     "combined_against": {

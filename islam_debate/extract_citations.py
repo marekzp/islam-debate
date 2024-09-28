@@ -65,12 +65,12 @@ def extract_citations(text: str) -> list[str]:
 def extract_citations_gpt4(
     text: str,
 ) -> list[dict]:
-    """Extract citations using GPT-4"""
+    """Extract citations using gpt-4"""
     standard_no_citations_reply = "No citations or quotations found."
     response_text = ""
 
     try:
-        logger.info("Attempting GPT-4 citation extraction")
+        logger.info("Attempting gpt-4 citation extraction")
 
         response = openai_client.chat.completions.create(
             model="gpt-4",
@@ -100,7 +100,7 @@ def extract_citations_gpt4(
         )
 
         response_text = response.choices[0].message.content.strip()
-        logger.debug("Raw GPT-4 response: %s", response_text)
+        logger.debug("Raw gpt-4 response: %s", response_text)
 
         if standard_no_citations_reply in response_text:
             logger.info("No citations or quotations found in the text.")
@@ -110,22 +110,22 @@ def extract_citations_gpt4(
 
         assert isinstance(
             result, list
-        ), f"GPT-4 response is not a list. Actual type: {type(result)}"
+        ), f"gpt-4 response is not a list. Actual type: {type(result)}"
         for item in result:
             assert isinstance(item, dict), (
-                f"GPT-4 response item is not a dictionary. "
+                f"gpt-4 response item is not a dictionary. "
                 f"Actual type: {type(item)}"
             )
             assert "source" in item, (
-                f"GPT-4 response item missing 'source' key. "
+                f"gpt-4 response item missing 'source' key. "
                 f"Keys present: {item.keys()}"
             )
             assert "quote" in item, (
-                f"GPT-4 response item missing 'quote' key. "
+                f"gpt-4 response item missing 'quote' key. "
                 f"Keys present: {item.keys()}"
             )
 
-        logger.info("Successfully extracted %d citations using GPT-4", len(result))
+        logger.info("Successfully extracted %d citations using gpt-4", len(result))
         return result
 
     except json.JSONDecodeError:
@@ -140,15 +140,17 @@ def extract_citations_gpt4(
         )
     except Exception:
         logger.exception(
-            "Unexpected error in GPT-4 citation extraction on attempt %d",
+            "Unexpected error in gpt-4 citation extraction on attempt %d",
         )
 
-    logger.error("All attempts failed for GPT-4 citation extraction")
+    logger.error("All attempts failed for gpt-4 citation extraction")
     return [response_text]
 
 
 def analyze_debate_section(section: dict[str, str]) -> dict:
-    """Analyze a debate section and extract entities, citations, and GPT-4 citations."""
+    """
+    Analyze a debate section and extract entities, citations, and gpt-4 citations.
+    """
     result = {}
     for key, text in section.items():
         logger.info(f"Analyzing debate section: {key}")
@@ -161,7 +163,7 @@ def analyze_debate_section(section: dict[str, str]) -> dict:
 
 
 def combine_for_against(debate_data: dict) -> dict:
-    """Combine all 'for' and 'against' entities, citations, and GPT-4 citations."""
+    """Combine all 'for' and 'against' entities, citations, and gpt-4 citations."""
     logger.info("Combining 'for' and 'against' data")
     combined = {
         "for": {"entities": defaultdict(set), "citations": set(), "citations_llm": []},

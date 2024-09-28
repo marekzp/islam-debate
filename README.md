@@ -91,7 +91,7 @@ python llm-debate/main.py <llm_type> <model> "<topic>" [--rounds <number_of_roun
 
 3. Debate with custom output filename and DEBUG log level:
    ```
-   python llm-debate/main.py openai gpt-4 "The future of renewable energy" --output energy_debate --log-level DEBUG
+   python llm-debate/main.py openai gpt-4o "The future of renewable energy" --output energy_debate --log-level DEBUG
    ```
 
 ## Output

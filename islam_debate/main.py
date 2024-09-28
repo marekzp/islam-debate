@@ -5,9 +5,9 @@ import time
 from datetime import datetime
 from typing import Any, Dict, List
 
-from debater import Debater
-from llm_clients import get_llm_client
-from utils import generate_filename, save_html, save_json
+from islam_debate.debater import Debater
+from islam_debate.llm_clients import get_llm_client
+from islam_debate.utils import generate_filename, save_html, save_json
 
 logger = logging.getLogger(__name__)
 
