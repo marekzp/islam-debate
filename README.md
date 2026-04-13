@@ -34,21 +34,16 @@ cd islam-debate
 
 ### 2. Install Dependencies
 
-This project uses [Poetry](https://python-poetry.org/) for dependency management. To install Poetry and the project dependencies:
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management. To install uv and the project dependencies:
 
-1. **Install Poetry** (if not already installed):
+1. **Install uv** (if not already installed):
    ```bash
-   curl -sSL https://install.python-poetry.org | python3 -
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
 2. **Install the dependencies**:
    ```bash
-   poetry install
-   ```
-
-3. **Activate the virtual environment**:
-   ```bash
-   poetry shell
+   uv sync
    ```
 
 ### 3. Install and Set Up Ollama
@@ -100,7 +95,7 @@ The primary analysis is contained within the Jupyter notebooks. To start a Jupyt
 
 1. Launch Jupyter:
    ```bash
-   poetry run jupyter notebook
+   uv run jupyter notebook
    ```
 
 2. Open the relevant notebook, such as:
