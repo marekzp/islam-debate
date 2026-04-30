@@ -1,7 +1,7 @@
 import json
 import os
 from abc import ABC, abstractmethod
-from typing import Any, Dict, Optional
+from typing import Any
 
 import requests
 from anthropic import Anthropic
@@ -16,7 +16,7 @@ class LLMClient(ABC):
 
 class OpenAIClient(LLMClient):
     def __init__(self) -> None:
-        self.api_key: Optional[str] = os.getenv("OPENAI_API_KEY")
+        self.api_key: str | None = os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY environment variable not set")
         self.client: OpenAI = OpenAI(api_key=self.api_key)
@@ -31,7 +31,7 @@ class OpenAIClient(LLMClient):
 
 class AnthropicClient(LLMClient):
     def __init__(self) -> None:
-        self.api_key: Optional[str] = os.getenv("ANTHROPIC_API_KEY")
+        self.api_key: str | None = os.getenv("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable not set")
         self.client: Anthropic = Anthropic(api_key=self.api_key)
@@ -52,7 +52,7 @@ class OllamaClient(LLMClient):
 
     def get_response(self, prompt: str, model: str) -> str:
         url = f"{self.base_url}/api/generate"
-        data: Dict[str, Any] = {"model": model, "prompt": prompt}
+        data: dict[str, Any] = {"model": model, "prompt": prompt}
         response = self.session.post(url, json=data, stream=True)
         response.raise_for_status()
 

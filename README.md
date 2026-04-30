@@ -48,20 +48,20 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management. To
 
 ### 3. Install and Set Up Ollama
 
-The project requires Ollama for running certain LLMs such as LLaMA 2, LLaMA 3, and Gemini 2. To install and set up Ollama:
+The project requires Ollama for running local models. To install and set up Ollama:
 
 1. Follow the installation instructions for Ollama from their [official website](https://ollama.com/).
 
-2. Once installed, download the required models:
+2. Once installed, download the models you want to test. For example:
    ```bash
-   ollama pull llama2
-   ollama pull llama3
-   ollama pull gemini2
+   ollama pull llama3.1:8b
+   ollama pull gemma3:12b
+   ollama pull qwen3:14b
    ```
 
 ### 4. API Keys Configuration
 
-You'll need API keys for **Anthropic**, **Llama**, and **OpenAI** to run debates with their respective models.
+You'll need API keys for **Anthropic** and **OpenAI** to run debates with those providers. Ollama runs locally and does not use an API key.
 
 1. Create a `.env` file in the root of your project directory:
 
@@ -73,11 +73,10 @@ You'll need API keys for **Anthropic**, **Llama**, and **OpenAI** to run debates
 
    ```bash
    ANTHROPIC_API_KEY=your_anthropic_api_key
-   LLAMA_API_KEY=your_llama_api_key
    OPENAI_API_KEY=your_openai_api_key
    ```
 
-   Replace `your_anthropic_api_key`, `your_llama_api_key`, and `your_openai_api_key` with your actual keys.
+   Replace `your_anthropic_api_key` and `your_openai_api_key` with your actual keys.
 
 ### 5. Make the Debate Script Executable
 
@@ -141,6 +140,36 @@ questions=(
     # Add more questions here...
 )
 ```
+
+## Running Cloud Batch Reruns
+
+For larger OpenAI and Anthropic reruns, use the resumable batch orchestrator in `islam_debate/cloud_batch.py`. It stores provider batch state on disk, only submits steps that are ready, and writes completed debate JSON files as each debate finishes.
+
+### Check Status
+
+```bash
+uv run python -m islam_debate.cloud_batch status \
+  --state-dir islam_debate/data/cloud_batch_20260430
+```
+
+### Advance the Batch State
+
+```bash
+uv run python -m islam_debate.cloud_batch advance \
+  --env-file /absolute/path/to/.env \
+  --state-dir islam_debate/data/cloud_batch_20260430 \
+  --openai-model gpt-5.5 \
+  --anthropic-model claude-opus-4-7 \
+  --openai-runs 10 \
+  --anthropic-runs 1
+```
+
+This command does three things:
+- polls any already-submitted provider batches
+- materializes newly completed debates into `results/`
+- submits the next ready OpenAI and Anthropic batches when there is no active batch for that provider
+
+The runner is stateful because each debate has dependent steps. Openings can be batched together, but rebuttals and conclusions are only submitted after the earlier required responses have finished.
 
 ## Methodology
 
