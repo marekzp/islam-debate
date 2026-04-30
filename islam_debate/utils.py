@@ -2,7 +2,6 @@ import json
 import logging
 import os
 from datetime import datetime
-from typing import Any, Dict
 
 logger = logging.getLogger(__name__)
 
@@ -14,24 +13,30 @@ def generate_filename(topic: str) -> str:
     return f"{snake_case_topic}_{current_time}"
 
 
-def save_json(data: Dict[str, Any], filename: str) -> str:
+def save_json(data: dict[str, object], filename: str) -> str:
     """Save the debate results as a JSON file."""
     file_path = f"{filename}.json"
+    directory = os.path.dirname(file_path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
     with open(file_path, "w") as f:
         json.dump(data, f, indent=2)
     return file_path
 
 
-def save_html(data: Dict[str, Any], filename: str) -> str:
+def save_html(data: dict[str, object], filename: str) -> str:
     """Save the debate results as an HTML file."""
     html_content = generate_html(data)
     file_path = f"{filename}.html"
+    directory = os.path.dirname(file_path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
     with open(file_path, "w") as f:
         f.write(html_content)
     return file_path
 
 
-def generate_html(data: Dict[str, Any]) -> str:
+def generate_html(data: dict[str, object]) -> str:
     """Generate HTML content for the debate results."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
     template_path = os.path.join(current_dir, "template.html")

@@ -3,7 +3,6 @@ import logging
 import os
 import time
 from datetime import datetime
-from typing import Any, Dict, List
 
 from islam_debate.debater import Debater
 from islam_debate.llm_clients import get_llm_client
@@ -11,8 +10,8 @@ from islam_debate.utils import generate_filename, save_html, save_json
 
 logger = logging.getLogger(__name__)
 
-LLM_CHOICES: List[str] = ["openai", "anthropic", "ollama"]
-LOG_LEVELS: Dict[str, int] = {
+LLM_CHOICES: list[str] = ["openai", "anthropic", "ollama"]
+LOG_LEVELS: dict[str, int] = {
     "DEBUG": logging.DEBUG,
     "INFO": logging.INFO,
     "WARNING": logging.WARNING,
@@ -21,13 +20,13 @@ LOG_LEVELS: Dict[str, int] = {
 }
 
 
-def main(model: str, topic: str, llm_type: str, num_rounds: int) -> Dict[str, Any]:
+def main(model: str, topic: str, llm_type: str, num_rounds: int) -> dict[str, object]:
     start_time = time.time()
     llm_client = get_llm_client(llm_type)
     for_debater: Debater = Debater(llm_client, model, topic, "for")
     against_debater: Debater = Debater(llm_client, model, topic, "against")
 
-    debate_results: Dict[str, Any] = {
+    debate_results: dict[str, object] = {
         "metadata": {
             "model": model,
             "topic": topic,
@@ -96,9 +95,9 @@ if __name__ == "__main__":
         "--filename", help="Custom output filename (without extension)", default=None
     )
     parser.add_argument(
-        "--return_html",
-        help="Return a html file that makes it easier to read responses",
-        default=False,
+        "--return-html",
+        action="store_true",
+        help="Generate an HTML file that makes the debate easier to read",
     )
     args: argparse.Namespace = parser.parse_args()
 
@@ -112,8 +111,7 @@ if __name__ == "__main__":
 
     results = main(args.model, args.topic, args.llm_type, args.rounds)
 
-    if not args.filename:
-        filename = generate_filename(args.topic)
+    filename = args.filename or generate_filename(args.topic)
 
     json_path = save_json(results, filename)
     logger.info(f"Debate results saved to JSON: {json_path}")
