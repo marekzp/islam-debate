@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import os
@@ -77,12 +78,19 @@ def _output_stem(topic: str, model: str, run_label: str) -> str:
     return f"{slugify(topic)}__{slugify(model)}__{run_label}"
 
 
+def _request_custom_id(debate_id: str, step: str) -> str:
+    digest = hashlib.sha1(f"{debate_id}::{step}".encode()).hexdigest()[:20]
+    return f"req_{digest}"
+
+
 def initialize_state(
     state_dir: Path,
     openai_model: str,
     anthropic_model: str,
     openai_runs: int,
     anthropic_runs: int,
+    openai_run_start: int,
+    anthropic_run_start: int,
 ) -> dict[str, Any]:
     state = {
         "schema_version": 1,
@@ -95,13 +103,15 @@ def initialize_state(
             "anthropic_model": anthropic_model,
             "openai_runs": openai_runs,
             "anthropic_runs": anthropic_runs,
+            "openai_run_start": openai_run_start,
+            "anthropic_run_start": anthropic_run_start,
             "num_rounds": 1,
         },
         "batches": [],
         "debates": [],
     }
 
-    for run_index in range(1, openai_runs + 1):
+    for run_index in range(openai_run_start, openai_run_start + openai_runs):
         run_label = f"run{run_index:02d}"
         for topic in TOPICS:
             state["debates"].append(
@@ -113,7 +123,10 @@ def initialize_state(
                 )
             )
 
-    for run_index in range(1, anthropic_runs + 1):
+    for run_index in range(
+        anthropic_run_start,
+        anthropic_run_start + anthropic_runs,
+    ):
         run_label = f"run{run_index:02d}"
         for topic in TOPICS:
             state["debates"].append(
@@ -291,7 +304,7 @@ def collect_ready_requests(
         for step in ready_steps_for_debate(state, debate):
             collected.append(
                 {
-                    "custom_id": f"{debate['id']}::{step}",
+                    "custom_id": _request_custom_id(debate["id"], step),
                     "debate_id": debate["id"],
                     "step": step,
                     "prompt": build_prompt_for_step(debate, step),
@@ -323,14 +336,55 @@ def anthropic_headers() -> dict[str, str]:
 def _ensure_complete_results(
     batch: dict[str, Any],
     parsed: dict[str, dict[str, Any]],
+    failed: dict[str, dict[str, Any]] | None = None,
 ) -> None:
     expected_ids = {request["custom_id"] for request in batch["requests"]}
-    missing_ids = sorted(expected_ids - parsed.keys())
+    observed_ids = set(parsed.keys())
+    if failed:
+        observed_ids |= set(failed.keys())
+    missing_ids = sorted(expected_ids - observed_ids)
     if missing_ids:
         raise RuntimeError(
             "Batch results were incomplete for "
             f"{batch['provider']} batch {batch['id']}: missing {missing_ids[:5]}"
         )
+
+
+def _download_openai_file(file_id: str) -> list[dict[str, Any]]:
+    response = requests.get(
+        f"{OPENAI_BASE_URL}/files/{file_id}/content",
+        headers=openai_headers(),
+        timeout=120,
+    )
+    response.raise_for_status()
+    return [
+        json.loads(line)
+        for line in response.text.splitlines()
+        if line.strip()
+    ]
+
+
+def _extract_openai_error(item: dict[str, Any]) -> dict[str, Any]:
+    response = item.get("response") or {}
+    body = response.get("body") or {}
+    error = body.get("error") or item.get("error") or {}
+    return {
+        "status_code": response.get("status_code"),
+        "type": error.get("type"),
+        "code": error.get("code"),
+        "message": error.get("message"),
+        "raw": item,
+    }
+
+
+def _openai_quota_blocked(state: dict[str, Any]) -> bool:
+    for batch in state["batches"]:
+        if batch["provider"] != "openai":
+            continue
+        for failure in batch.get("request_failures", []):
+            if failure.get("code") == "insufficient_quota":
+                return True
+    return False
 
 
 def submit_openai_batch(
@@ -383,7 +437,11 @@ def submit_openai_batch(
         },
         timeout=120,
     )
-    batch.raise_for_status()
+    if not batch.ok:
+        raise RuntimeError(
+            "OpenAI batch creation failed: "
+            f"{batch.status_code} {batch.text}"
+        )
     batch_json = batch.json()
 
     return {
@@ -429,7 +487,11 @@ def submit_anthropic_batch(
         json=payload,
         timeout=120,
     )
-    response.raise_for_status()
+    if not response.ok:
+        raise RuntimeError(
+            "Anthropic batch creation failed: "
+            f"{response.status_code} {response.text}"
+        )
     batch_json = response.json()
 
     return {
@@ -468,43 +530,41 @@ def poll_openai_batch(batch: dict[str, Any]) -> dict[str, Any]:
         batch["raw"] = batch_json
         return {}
 
-    output_file_id = batch_json.get("output_file_id")
-    if not output_file_id:
-        raise RuntimeError(f"OpenAI batch completed without output file: {batch['id']}")
-
-    output = requests.get(
-        f"{OPENAI_BASE_URL}/files/{output_file_id}/content",
-        headers=openai_headers(),
-        timeout=120,
-    )
-    output.raise_for_status()
-
     parsed: dict[str, dict[str, Any]] = {}
-    for line in output.text.splitlines():
-        if not line.strip():
-            continue
-        item = json.loads(line)
-        custom_id = item["custom_id"]
-        if item.get("error"):
-            raise RuntimeError(
-                f"OpenAI batch request failed: {custom_id}: {item['error']}"
-            )
-        body = item["response"]["body"]
-        message = body["choices"][0]["message"]["content"]
-        if isinstance(message, list):
-            text = "".join(
-                part.get("text", "")
-                for part in message
-                if part.get("type") == "text"
-            )
-        else:
-            text = message
-        parsed[custom_id] = {"text": text, "usage": body.get("usage")}
+    failed: dict[str, dict[str, Any]] = {}
 
-    _ensure_complete_results(batch, parsed)
+    output_file_id = batch_json.get("output_file_id")
+    if output_file_id:
+        for item in _download_openai_file(output_file_id):
+            custom_id = item["custom_id"]
+            if item.get("error"):
+                failed[custom_id] = _extract_openai_error(item)
+                continue
+            body = item["response"]["body"]
+            message = body["choices"][0]["message"]["content"]
+            if isinstance(message, list):
+                text = "".join(
+                    part.get("text", "")
+                    for part in message
+                    if part.get("type") == "text"
+                )
+            else:
+                text = message
+            parsed[custom_id] = {"text": text, "usage": body.get("usage")}
+
+    error_file_id = batch_json.get("error_file_id")
+    if error_file_id:
+        for item in _download_openai_file(error_file_id):
+            failed[item["custom_id"]] = _extract_openai_error(item)
+
+    _ensure_complete_results(batch, parsed, failed)
     batch["status"] = "completed"
     batch["completed_at"] = now_utc_iso()
     batch["raw"] = batch_json
+    batch["request_failures"] = [
+        {"custom_id": custom_id, **details}
+        for custom_id, details in sorted(failed.items())
+    ]
     return parsed
 
 
@@ -589,6 +649,7 @@ def submit_ready_batches(
     state: dict[str, Any],
     openai_max_requests: int | None,
     anthropic_max_requests: int | None,
+    retry_openai_failures: bool,
 ) -> int:
     submitted = 0
     active_providers = {
@@ -597,7 +658,10 @@ def submit_ready_batches(
         if batch["status"] in {"submitted", "processing"}
     }
 
-    if "openai" not in active_providers:
+    if (
+        "openai" not in active_providers
+        and (retry_openai_failures or not _openai_quota_blocked(state))
+    ):
         requests_to_submit = collect_ready_requests(
             state,
             "openai",
@@ -713,6 +777,18 @@ def summarize_state(state: dict[str, Any]) -> str:
                 f"- {batch['provider']} {batch['id']} "
                 f"({len(batch['requests'])} requests, {batch['status']})"
             )
+    if _openai_quota_blocked(state):
+        failed_requests = sum(
+            1
+            for batch in state["batches"]
+            if batch["provider"] == "openai"
+            for failure in batch.get("request_failures", [])
+            if failure.get("code") == "insufficient_quota"
+        )
+        lines.append(
+            "OpenAI is blocked by insufficient quota "
+            f"({failed_requests} request(s) failed with insufficient_quota)."
+        )
     return "\n".join(lines)
 
 
@@ -739,8 +815,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--anthropic-model", default="claude-opus-4-7")
     parser.add_argument("--openai-runs", type=int, default=10)
     parser.add_argument("--anthropic-runs", type=int, default=1)
+    parser.add_argument("--openai-run-start", type=int, default=1)
+    parser.add_argument("--anthropic-run-start", type=int, default=1)
     parser.add_argument("--openai-max-requests", type=int, default=None)
     parser.add_argument("--anthropic-max-requests", type=int, default=None)
+    parser.add_argument(
+        "--retry-openai-failures",
+        action="store_true",
+        help=(
+            "Allow retrying OpenAI steps that previously failed "
+            "with insufficient_quota"
+        ),
+    )
     parser.add_argument(
         "--log-level",
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
@@ -768,6 +854,8 @@ def main() -> int:
             anthropic_model=args.anthropic_model,
             openai_runs=args.openai_runs,
             anthropic_runs=args.anthropic_runs,
+            openai_run_start=args.openai_run_start,
+            anthropic_run_start=args.anthropic_run_start,
         )
         save_state(state_dir, state)
 
@@ -777,11 +865,13 @@ def main() -> int:
 
     poll_batches(state)
     materialized = materialize_completed_debates(state)
+    save_state(state_dir, state)
     submitted = submit_ready_batches(
         state_dir=state_dir,
         state=state,
         openai_max_requests=args.openai_max_requests,
         anthropic_max_requests=args.anthropic_max_requests,
+        retry_openai_failures=args.retry_openai_failures,
     )
     save_state(state_dir, state)
 

@@ -20,7 +20,13 @@ LOG_LEVELS: dict[str, int] = {
 }
 
 
-def main(model: str, topic: str, llm_type: str, num_rounds: int) -> dict[str, object]:
+def main(
+    model: str,
+    topic: str,
+    llm_type: str,
+    num_rounds: int,
+    run_label: str | None = None,
+) -> dict[str, object]:
     start_time = time.time()
     llm_client = get_llm_client(llm_type)
     for_debater: Debater = Debater(llm_client, model, topic, "for")
@@ -36,6 +42,8 @@ def main(model: str, topic: str, llm_type: str, num_rounds: int) -> dict[str, ob
         },
         "debate": {},
     }
+    if run_label:
+        debate_results["metadata"]["run_label"] = run_label
 
     logger.info("Starting debate...")
     debate_results["debate"]["opening_arguments"] = {
@@ -95,6 +103,11 @@ if __name__ == "__main__":
         "--filename", help="Custom output filename (without extension)", default=None
     )
     parser.add_argument(
+        "--run-label",
+        help="Optional run label to store in the output metadata",
+        default=None,
+    )
+    parser.add_argument(
         "--return-html",
         action="store_true",
         help="Generate an HTML file that makes the debate easier to read",
@@ -109,7 +122,13 @@ if __name__ == "__main__":
     script_path = os.path.abspath(__file__)
     logger.info(f"Running script: {script_path}")
 
-    results = main(args.model, args.topic, args.llm_type, args.rounds)
+    results = main(
+        args.model,
+        args.topic,
+        args.llm_type,
+        args.rounds,
+        run_label=args.run_label,
+    )
 
     filename = args.filename or generate_filename(args.topic)
 
